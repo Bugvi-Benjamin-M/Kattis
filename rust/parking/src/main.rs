@@ -12,7 +12,7 @@ fn main() {
     
     for _ in 0..t {
         
-        let n: u8 = input().trim().parse().unwrap();
+        let _ = input();
         
         let mut store_locations: Vec<i16> = input()
             .trim()
@@ -22,11 +22,8 @@ fn main() {
 
         store_locations.sort();
 
-        let mut dist = store_locations[store_locations.len()-1] - store_locations[0];
+        let dist = (store_locations[store_locations.len()-1] - store_locations[0]) * 2;
 
-        for i in 0..n-1 {
-            dist += store_locations[(i + 1) as usize] - store_locations[i as usize];
-        }
         println!("{}", dist);
     }
 
